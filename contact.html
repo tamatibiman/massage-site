@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>お問い合わせ - はじめタイ式マッサージ教室</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="top-bar">
+    <a href="index.html" class="logo">はじめタイ式マッサージ教室</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="courses.html">コース紹介</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="#">アクセス</a>
+    </nav>
+  </div>
+
+  <main>
+    <h2>お問い合わせ</h2>
+    <p>ご質問やご相談がある場合は、右下のチャットからお気軽にご連絡ください。<br>チャットは匿名でもご利用いただけます。</p>
+
+    <h3>お問い合わせ方法を選んでください</h3>
+    <div class="cta-buttons">
+      <button onclick="toggleChat()">チャットで問い合わせる</button>
+      <button onclick="toggleLine()">LINEで問い合わせる</button>
+    </div>
+
+    <div id="chat-options" class="hidden">
+      <h4>ご相談内容を選んでください（チャット）</h4>
+      <button onclick="setChatMessage('コースについて')">コースについて</button>
+      <button onclick="setChatMessage('レッスン日程の相談')">レッスン日程の相談</button>
+      <button onclick="setChatMessage('まずは話を聞いてみたい')">まずは話を聞いてみたい</button>
+    </div>
+
+    <div id="line-options" class="hidden">
+      <h4>ご相談内容を選んでください（LINE）</h4>
+      <button onclick="goLine('コースについて相談したいです')">コースについて</button>
+      <button onclick="goLine('レッスン日程の相談がしたいです')">レッスン日程の相談</button>
+      <button onclick="goLine('まずは話を聞いてみたいです')">まずは話を聞いてみたい</button>
+    </div>
+  </main>
+
+  <script>
+    function toggleChat() {
+      document.getElementById("chat-options").classList.remove("hidden");
+      document.getElementById("line-options").classList.add("hidden");
+    }
+    function toggleLine() {
+      document.getElementById("line-options").classList.remove("hidden");
+      document.getElementById("chat-options").classList.add("hidden");
+    }
+    function setChatMessage(msg) {
+      if (window.$crisp) {
+        $crisp.push(["do", "chat:open"]);
+        $crisp.push(["do", "message:send", ["text", msg]]);
+      }
+    }
+    function goLine(message) {
+      const encoded = encodeURIComponent(message);
+      const link = "https://line.me/ja/?text=" + encoded;
+      window.open(link, "_blank");
+    }
+  </script>
+
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "25cf8bf1-6653-4e23-a007-9a78b8f79a1b";
+    (function () {
+      var d = document;
+      var s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+</body>
+</html>
