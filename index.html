@@ -50,7 +50,11 @@
   </div>
 
   <script>
-    if (true) {
+    const hasSeenIntro = localStorage.getItem("seenIntro");
+    if (hasSeenIntro) {
+      document.getElementById("main-content").style.display = "block";
+      document.getElementById("intro-overlay").style.display = "none";
+    } else {
       const m1 = document.getElementById("message1");
       const m2 = document.getElementById("message2");
       setTimeout(() => m1.classList.add("show"), 500);
