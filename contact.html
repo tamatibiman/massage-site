@@ -1,61 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>お問い合わせ - はじめタイ式マッサージ教室</title>
-  <link rel="stylesheet" href="style.css" />
-  <script type="text/javascript">
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "25cf8bf1-6653-4e23-a007-9a78b8f79a1b";
-    (function () {
-      d = document;
-      s = d.createElement("script");
-      s.src = "https://client.crisp.chat/l.js";
-      s.async = 1;
-      d.getElementsByTagName("head")[0].appendChild(s);
-    })();
-  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>はじめタイ式マッサージ教室</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">ホーム</a></li>
-          <li><a href="concept.html">コンセプト</a></li>
-          <li><a href="courses.html">コース紹介</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <h1>はじめタイ式マッサージ教室</h1>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="courses.html">コース紹介</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </header>
 
-    <main>
+  <main>
+    <section>
       <h2>お問い合わせ</h2>
-      <hr />
-      <div class="contact-box">
-        <p>ご質問やご相談がある場合は、右下のチャットからお気軽にご連絡ください。</p>
-        <p>チャットは匿名でもご利用いただけます。</p>
+      <p>ご質問やご相談がある場合は、右下のチャットからもお気軽にご連絡ください。チャットは匿名でもご利用いただけます。</p>
+    </section>
+
+    <section>
+      <h3>お問い合わせ方法を選んでください</h3>
+      <div class="cta-buttons">
+        <button id="line-btn">LINEで問い合わせる</button>
+        <button id="chat-btn">チャットで問い合わせる</button>
       </div>
 
-      <h3>ご相談内容を選んでください</h3>
-      <hr />
-      <div class="button-group">
-        <button onclick="setMessage('コースについて')">コースについて</button>
-        <button onclick="setMessage('レッスン日程の相談')">レッスン日程の相談</button>
-        <button onclick="setMessage('まずは話を聞いてみたい')">まずは話を聞いてみたい</button>
+      <div id="chat-options" class="hidden">
+        <h4>ご相談内容を選んでください</h4>
+        <button onclick="setChatMessage('コースについて')">コースについて</button>
+        <button onclick="setChatMessage('レッスン日程の相談')">レッスン日程の相談</button>
+        <button onclick="setChatMessage('まずは話を聞いてみたい')">まずは話を聞いてみたい</button>
       </div>
-    </main>
-  </div>
+    </section>
+  </main>
 
-  <script>
-    function setMessage(topic) {
-      if (window.$crisp) {
-        $crisp.push(["do", "chat:open"]);
-        $crisp.push(["set", "message:text", topic + "について相談したいです。"]);
-      }
-    }
+  <script src="script.js"></script>
+
+  <!-- Crisp チャット埋め込み -->
+  <script type="text/javascript">
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = "25cf8bf1-6653-4e23-a007-9a78b8f79a1b";
+  (function () {
+    d = document;
+    s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
   </script>
 </body>
 </html>
