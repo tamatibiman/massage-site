@@ -44,8 +44,8 @@
   </div>
 
   <script>
-    const hasSeenIntro = false;
-    if (hasSeenIntro || localStorage.getItem("seenIntro")) {
+    const hasSeenIntro = localStorage.getItem("seenIntro");
+    if (hasSeenIntro) {
       document.getElementById("main-content").style.display = "block";
       document.getElementById("intro-overlay").style.display = "none";
     } else {
