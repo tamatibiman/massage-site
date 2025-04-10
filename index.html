@@ -1,5 +1,3 @@
-
-<!-- intro.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +6,6 @@
   <title>NEMU マッサージスクール</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* フルスクリーンのイントロ表示 */
     #intro-overlay {
       position: fixed;
       top: 0;
@@ -25,13 +22,11 @@
       font-size: 2rem;
       font-family: "Yu Gothic", sans-serif;
     }
-
     .fade {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 1.5s ease, transform 1.5s ease;
     }
-
     .fade.show {
       opacity: 1;
       transform: translateY(0);
@@ -43,36 +38,26 @@
     <div id="message1" class="fade">“なんか気になる”</div>
     <div id="message2" class="fade" style="display:none">それで十分。</div>
   </div>
-
   <div id="main-content" style="display:none">
-    <!-- ここに既存のサイトコンテンツを読み込む -->
-    <script>window.location.href = "index.html";</script>
+    <script>window.location.href = "main.html";</script>
   </div>
-
   <script>
-    const hasSeenIntro = localStorage.getItem("seenIntro");
-    if (hasSeenIntro) {
-      document.getElementById("main-content").style.display = "block";
+    const m1 = document.getElementById("message1");
+    const m2 = document.getElementById("message2");
+    setTimeout(() => m1.classList.add("show"), 500);
+    setTimeout(() => m1.classList.remove("show"), 2500);
+    setTimeout(() => {
+      m1.style.display = "none";
+      m2.style.display = "block";
+      m2.classList.add("show");
+    }, 3000);
+    setTimeout(() => {
+      m2.classList.remove("show");
+    }, 5000);
+    setTimeout(() => {
       document.getElementById("intro-overlay").style.display = "none";
-    } else {
-      const m1 = document.getElementById("message1");
-      const m2 = document.getElementById("message2");
-      setTimeout(() => m1.classList.add("show"), 500);
-      setTimeout(() => m1.classList.remove("show"), 2500);
-      setTimeout(() => {
-        m1.style.display = "none";
-        m2.style.display = "block";
-        m2.classList.add("show");
-      }, 3000);
-      setTimeout(() => {
-        m2.classList.remove("show");
-      }, 5000);
-      setTimeout(() => {
-        document.getElementById("intro-overlay").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-        // localStorage.setItem("seenIntro", "true"); // 毎回表示のため無効化
-      }, 5800);
-    }
+      document.getElementById("main-content").style.display = "block";
+    }, 5800);
   </script>
 </body>
 </html>
