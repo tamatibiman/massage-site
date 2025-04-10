@@ -19,21 +19,30 @@ nav a {
 main {
   padding: 2em;
 }
-h2, h3, h4 {
-  border-bottom: 2px solid goldenrod;
-  padding-bottom: 0.5em;
+.hero {
+  text-align: center;
+  margin-bottom: 3em;
 }
-.cta-buttons button,
-#chat-options button,
-#line-options button {
-  display: inline-block;
-  background-color: #333;
-  color: #fff;
-  border: 1px solid #aaa;
+.features {
+  margin-bottom: 3em;
   padding: 1em;
-  margin: 0.5em;
-  cursor: pointer;
+  background-color: #1c1c1c;
+  border-radius: 8px;
 }
-.hidden {
-  display: none;
+.cta-button {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.8em 1.5em;
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+footer {
+  background-color: #000;
+  color: #888;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
 }
