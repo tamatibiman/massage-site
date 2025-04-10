@@ -25,6 +25,20 @@
       line-height: 1.8;
     }
   </style>
+
+<!-- Crisp Chat Integration -->
+<script type="text/javascript">
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = "25cf8bf1-6653-4e23-a007-9a78b8f79a1b";
+  (function () {
+    var d = document;
+    var s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+</script>
+
 </head>
 <body>
   
@@ -75,6 +89,27 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!-- End of Tawk.to Script -->
+
+
+<section style="margin-top: 60px;">
+  <h2>ご相談内容を選んでください</h2>
+  <div style="display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: auto;">
+    <button onclick="startChat('コースについて相談したいです')" style="padding: 10px;">コースについて</button>
+    <button onclick="startChat('レッスン日程について相談したいです')" style="padding: 10px;">レッスン日程の相談</button>
+    <button onclick="startChat('まずは話を聞いてみたいです')" style="padding: 10px;">まずは話を聞いてみたい</button>
+  </div>
+</section>
+
+<script>
+  function startChat(message) {
+    if (window.$crisp) {
+      $crisp.push(["do", "chat:open"]);
+      $crisp.push(["set", "user:message", [message]]);
+    } else {
+      alert("チャットの読み込みがまだ完了していません。少し待ってからもう一度お試しください。");
+    }
+  }
+</script>
 
 
 <section style="margin-top: 60px;">
