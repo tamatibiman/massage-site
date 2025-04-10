@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -38,26 +39,62 @@
     <div id="message1" class="fade">“なんか気になる”</div>
     <div id="message2" class="fade" style="display:none">それで十分。</div>
   </div>
+
   <div id="main-content" style="display:none">
-    <script>window.location.href = "main.html";</script>
+    <script src="script.js"></script>
+    <header>
+      <h1>NEMU</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="concept.html">コンセプト</a></li>
+          <li><a href="courses.html">コース紹介</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="hero">
+      <h2>“なんか気になる” からでも、じゅうぶん。</h2>
+      <p>誰だって最初は未経験。タイ式マッサージを楽しく学ぼう。</p>
+    </section>
+    <section>
+      <h3>確かな技術と資格制度</h3>
+      <p>タイ政府公認スクールのインストラクター資格を持つ講師がレッスンいたします。試験合格後にはタイ政府認定の資格が取得可能です！</p>
+    </section>
+    <section>
+      <h3>学びやすい料金設定</h3>
+      <p>ベーシック・プロフェッショナルともに3ヶ月 30,000円 から受講可能です。</p>
+      <a href="courses.html" class="cta-button">コース紹介はこちら</a>
+    </section>
+    <footer>
+      <p>&copy; 2025 NEMU マッサージスクール</p>
+    </footer>
   </div>
+
   <script>
-    const m1 = document.getElementById("message1");
-    const m2 = document.getElementById("message2");
-    setTimeout(() => m1.classList.add("show"), 500);
-    setTimeout(() => m1.classList.remove("show"), 2500);
-    setTimeout(() => {
-      m1.style.display = "none";
-      m2.style.display = "block";
-      m2.classList.add("show");
-    }, 3000);
-    setTimeout(() => {
-      m2.classList.remove("show");
-    }, 5000);
-    setTimeout(() => {
-      document.getElementById("intro-overlay").style.display = "none";
+    const hasSeenIntro = false; // ← F5ごとに毎回再生（あとでtrueに戻せばスキップ可）
+    if (hasSeenIntro || localStorage.getItem("seenIntro")) {
       document.getElementById("main-content").style.display = "block";
-    }, 5800);
+      document.getElementById("intro-overlay").style.display = "none";
+    } else {
+      const m1 = document.getElementById("message1");
+      const m2 = document.getElementById("message2");
+      setTimeout(() => m1.classList.add("show"), 500);
+      setTimeout(() => m1.classList.remove("show"), 2500);
+      setTimeout(() => {
+        m1.style.display = "none";
+        m2.style.display = "block";
+        m2.classList.add("show");
+      }, 3000);
+      setTimeout(() => {
+        m2.classList.remove("show");
+      }, 5000);
+      setTimeout(() => {
+        document.getElementById("intro-overlay").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+        localStorage.setItem("seenIntro", "true");
+      }, 5800);
+    }
   </script>
 </body>
 </html>
