@@ -1,10 +1,10 @@
 
-document.getElementById('line-btn').addEventListener('click', function () {
+document.getElementById('line-btn')?.addEventListener('click', function () {
   document.getElementById('line-options').classList.toggle('hidden');
   document.getElementById('chat-options').classList.add('hidden');
 });
 
-document.getElementById('chat-btn').addEventListener('click', function () {
+document.getElementById('chat-btn')?.addEventListener('click', function () {
   document.getElementById('chat-options').classList.toggle('hidden');
   document.getElementById('line-options').classList.add('hidden');
 });

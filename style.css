@@ -1,42 +1,107 @@
 
 body {
-  font-family: sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Noto Serif JP', '楷書体', 'Hiragino Mincho ProN', serif;
+  background-color: #111;
+  color: #f0f0f0;
   margin: 0;
   padding: 0;
-  color: #333;
 }
 
-header {
-  background-color: #0073aa;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.top-bar {
+  background: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-nav a {
-  margin: 0 10px;
+.top-bar a {
+  color: #ccc;
+  margin-left: 10px;
   text-decoration: none;
+}
+
+.top-bar a.logo {
+  font-size: 1.3em;
+  font-weight: bold;
   color: white;
+  text-shadow: 0 0 6px #000;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  padding-right: 10px;
 }
 
 main {
-  max-width: 800px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 20px;
+  max-width: 960px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #111;
+  padding: 14px 28px;
+  font-weight: bold;
+  font-size: 1.2em;
   border-radius: 8px;
+  text-decoration: none;
+  margin-top: 30px;
 }
 
-.cta-buttons {
-  margin: 20px 0;
+.cta-button:hover {
+  background-color: #ffd700;
 }
 
-.cta-buttons button {
-  margin-right: 10px;
-  padding: 10px 20px;
-  font-size: 1rem;
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background: url('https://cdn.pixabay.com/photo/2020/08/21/09/55/meditation-5506627_1280.jpg') no-repeat center center;
+  background-size: cover;
+  animation: fadeInDrop 1.5s ease-out forwards;
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  color: black;
+  text-shadow: 0 0 10px #fff;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: black;
+  text-shadow: 0 0 6px #fff;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 960px;
+  margin: auto;
+}
+
+.section.gray {
+  background-color: #1a1a1a;
+}
+
+.course-box {
+  border: 1px solid #444;
+  background-color: #1a1a1a;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.highlight {
+  color: #ffcc00;
+  font-weight: bold;
 }
 
 .hidden {
