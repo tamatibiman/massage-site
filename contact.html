@@ -20,7 +20,7 @@
   <main>
     <section>
       <h2>お問い合わせ</h2>
-      <p>ご質問やご相談がある場合は、右下のチャットからもお気軽にご連絡ください。チャットは匿名でもご利用いただけます。</p>
+      <p>ご質問やご相談がある場合は、右下のチャットからもお気軽にご連絡ください。</p>
     </section>
 
     <section>
@@ -30,8 +30,15 @@
         <button id="chat-btn">チャットで問い合わせる</button>
       </div>
 
+      <div id="line-options" class="hidden">
+        <h4>ご相談内容を選んでください（LINE）</h4>
+        <button onclick="goLine('コースについて相談したいです')">コースについて</button>
+        <button onclick="goLine('レッスン日程の相談がしたいです')">レッスン日程の相談</button>
+        <button onclick="goLine('まずは話を聞いてみたいです')">まずは話を聞いてみたい</button>
+      </div>
+
       <div id="chat-options" class="hidden">
-        <h4>ご相談内容を選んでください</h4>
+        <h4>ご相談内容を選んでください（チャット）</h4>
         <button onclick="setChatMessage('コースについて')">コースについて</button>
         <button onclick="setChatMessage('レッスン日程の相談')">レッスン日程の相談</button>
         <button onclick="setChatMessage('まずは話を聞いてみたい')">まずは話を聞いてみたい</button>
